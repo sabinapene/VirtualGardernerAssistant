@@ -1,0 +1,143 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".ActivityChangeNotMaxLimit"
+    android:background="@drawable/background_leaves"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change Notifications Upper Limit"
+                android:textAlignment="center"
+                android:textColor="#FF7E3309"
+                android:textStyle="bold"
+                android:layout_marginBottom="20dp"
+                />
+
+
+            <!--Humidity Spinner-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Humidity Upper Limit   (0-100%)"
+                android:layout_marginBottom="10dp"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/textViewNotMaxLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:text="0%"
+                android:layout_marginBottom="20dp"
+                />
+
+            <SeekBar
+                android:id="@+id/seekBarMaxHumidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:min="0"
+                android:max="100"
+                android:layout_marginBottom="20dp"
+                />
+
+
+            <!--Temperature spinner-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="Temperature Upper Limit (0-100 C)"
+                android:layout_marginBottom="10dp"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:id="@+id/textViewNotMaxLimit2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:text="0 C"
+                android:layout_marginBottom="20dp"
+                />
+
+            <SeekBar
+                android:id="@+id/seekBarMaxTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:min="0"
+                android:max="100"
+                android:layout_marginBottom="20dp"
+                />
+
+            <!--CO2 spinner-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="CO2 Upper Limit (0-2.000 ppm)"
+                android:layout_marginBottom="10dp"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:id="@+id/textViewNotMaxLimit3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:text="0 ppm"
+                android:layout_marginBottom="20dp"
+                />
+
+            <SeekBar
+                android:id="@+id/seekBarMaxCO2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:min="0"
+                android:max="2000"
+                android:layout_marginBottom="20dp"
+                />
+
+
+            <!--Save button-->
+            <Button
+                android:id="@+id/saveNotMaxLimitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#C77E3309"
+                android:text="Save Changes"
+                android:orientation="horizontal"
+                />
+
+            <!--Cancel button-->
+            <Button
+                android:id="@+id/cancelNotMaxLimitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#C77E3309"
+                android:text="Cancel"
+                android:orientation="horizontal"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

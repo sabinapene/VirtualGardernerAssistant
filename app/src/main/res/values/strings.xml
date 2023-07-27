@@ -1,6 +1,38 @@
 <resources>
-    <string name="app_name">Virtual Garderner Assistant</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+<string name="app_name">Virtual Gardener Assistant</string>
+<string name="Open">Virtual Gardener Assistant</string>
+<string name="Close">Virtual Gardener Assistant</string>
+
+<!--Make bold-->
+<string name="don_t_have_an_account_sign_up">Don\'t have an account? <b>Sign Up</b> </string>
+<string name="already_have_an_account_sign_in">Already have an account? <b>Sign in</b> </string>
+<string name="change_your_password">Change your <b>password</b> </string>
+    <string name="change_your_email">Change your <b>email</b> </string>
+    <string name="not_min_limit">Change <b>Notifications Lower Limit</b> </string>
+    <string name="not_max_limit">Change  <b>Notifications Upper Limit</b> </string>
+<!-- Preference Titles -->
+<string name="messages_header">Messages</string>
+<string name="sync_header">Sync</string>
+
+<!-- Messages Preferences -->
+<string name="signature_title">Your signature</string>
+<string name="reply_title">Default reply action</string>
+
+<!-- Sync Preferences -->
+<string name="sync_title">Sync email periodically</string>
+<string name="attachment_title">Download incoming attachments</string>
+<string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+<string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+<string-array name="notifications_period">
+    <item>30 minutes</item>
+    <item>1 hour</item>
+    <item>2 hours</item>
+    <item>12 hours</item>
+    <item>Daily</item>
+
+
+</string-array>
+    
 </resources>
