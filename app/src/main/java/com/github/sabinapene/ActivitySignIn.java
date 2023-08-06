@@ -121,4 +121,5 @@ public class ActivitySignIn extends AppCompatActivity {
     public static void setCurrentUserEmail(String uemail) {
         currentUserEmail = uemail;
     }
+    public static String getCurrentUserEmail(){ return currentUserEmail; }
 }
