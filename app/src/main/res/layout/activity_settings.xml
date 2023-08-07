@@ -64,6 +64,21 @@
         android:textStyle="bold"
         android:background="@drawable/rectangle"
         />
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save"
+        android:backgroundTint="#C77E3309"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:backgroundTint="#C77E3309"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/notMinLimitTextView"

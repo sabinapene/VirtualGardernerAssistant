@@ -17,6 +17,7 @@ import com.github.sabinapene.MainActivity;
 import com.github.sabinapene.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.transition.MaterialElevationScale;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -122,4 +123,17 @@ public class ActivitySignIn extends AppCompatActivity {
         currentUserEmail = uemail;
     }
     public static String getCurrentUserEmail(){ return currentUserEmail; }
+    public static String getCurrentUserEmailID(){
+
+            String str="";
+            char[] ch = currentUserEmail.toCharArray();
+            int i = 0;
+            // Traverse the character array
+            while (i < ch.length) {
+                if(ch[i]!='@'){
+                str = str+ch[i];}
+                else {break;}
+            }
+
+        return str; }
 }
