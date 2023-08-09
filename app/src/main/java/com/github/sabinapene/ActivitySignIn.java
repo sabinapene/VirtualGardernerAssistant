@@ -12,12 +12,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.github.sabinapene.ActivitySignUp;
-import com.github.sabinapene.MainActivity;
-import com.github.sabinapene.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.transition.MaterialElevationScale;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,7 +22,8 @@ public class ActivitySignIn extends AppCompatActivity {
 
     private String email="", password="";
     private FirebaseAuth firebaseAuth;
-    SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferencesEmail;
+    SharedPreferences sharedPreferencesUserID;
     private static String currentUserEmail="";
 
     @Override
@@ -36,6 +33,11 @@ public class ActivitySignIn extends AppCompatActivity {
 
         //initialise firebase auth
         firebaseAuth = FirebaseAuth.getInstance();
+
+        sharedPreferencesUserID  = getSharedPreferences("UserID", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferencesUserID.edit();
+        editor.putString("UserID", getCurrentUserEmailID());
+        editor.apply();
 
 
         findViewById(R.id.createAccountView).setOnClickListener(new View.OnClickListener() {
@@ -93,12 +95,11 @@ public class ActivitySignIn extends AppCompatActivity {
                         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                         Toast.makeText(ActivitySignIn.this, "Signed in", Toast.LENGTH_SHORT).show();
 
-                        sharedPreferences = getSharedPreferences("preferences", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        sharedPreferencesEmail  = getSharedPreferences("preferences", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferencesEmail.edit();
                         editor.putString("userEmail", email);
                         editor.apply();
-                        currentUserEmail = sharedPreferences.getString("userEmail", "");
-
+                        currentUserEmail = sharedPreferencesEmail.getString("userEmail", "");
 
                         //open main activity
                         startActivity(new Intent(ActivitySignIn.this, MainActivity.class));
@@ -134,6 +135,7 @@ public class ActivitySignIn extends AppCompatActivity {
                 str = str+ch[i];}
                 else {break;}
             }
+
 
         return str; }
 }

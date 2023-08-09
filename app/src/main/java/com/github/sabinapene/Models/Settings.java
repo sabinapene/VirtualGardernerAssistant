@@ -5,7 +5,7 @@ import com.github.sabinapene.ActivitySignIn;
 public class Settings {
     String metricPreferences = "";
     String notificationsPeriod = "";
-    //String userID = "";
+    String userID = "";
 
     public Settings(){
 
@@ -14,7 +14,15 @@ public class Settings {
     public Settings(String metricPreferences, String notificationsPeriod){
         this.metricPreferences = metricPreferences;
         this.notificationsPeriod = notificationsPeriod;
-        //userID = ActivitySignIn.getCurrentUserEmail();
+        userID = ActivitySignIn.getCurrentUserEmail();
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public String getMetricPreferences(){

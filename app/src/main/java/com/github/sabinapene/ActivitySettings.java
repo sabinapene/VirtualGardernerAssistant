@@ -34,7 +34,8 @@ public class ActivitySettings extends AppCompatActivity implements AdapterView.O
     int spinnerIndexCurrentDisplay =0;
     String metric="true";
     TextView notPerTextView;
-
+    String str="123";
+    String userEmail="";
 
 
     @Override
@@ -49,7 +50,7 @@ public class ActivitySettings extends AppCompatActivity implements AdapterView.O
         sharedPreferencesNotificationsPeriod = getSharedPreferences("preferences", MODE_PRIVATE);
         notPeriod = sharedPreferencesNotificationsPeriod.getString("Notifications_Period", "");
         notPerTextView.setText("Notifications Period: "+notPeriod);
-        metric = sharedPreferencesNotificationsPeriod.getString("Metric", "");
+        metric = sharedPreferencesMetric.getString("Metric", "");
         if(metric.equals("true")){
             swtMetricUnits.setChecked(true);
             swtImperialUnits.setChecked(false);
@@ -209,12 +210,12 @@ public class ActivitySettings extends AppCompatActivity implements AdapterView.O
 
         //add to firebase
        DatabaseReference reference = db.getInstance().getReference("settings");
-         reference.child(ActivitySignIn.getCurrentUserEmailID()).setValue(settings)
+         reference.child(str).setValue(settings)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         //game added successfully
-                        Toast.makeText(getApplicationContext(), "settings save in db", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "settings save in db "+str, Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
